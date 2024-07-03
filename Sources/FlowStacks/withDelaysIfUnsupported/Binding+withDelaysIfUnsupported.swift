@@ -105,7 +105,7 @@ extension Binding {
     }
     wrappedValue[keyPath: keyPath] = firstStep
     do {
-      try await Task.sleep(nanoseconds: UInt64(0.65 * 1_000_000_000))
+      try await Task.sleep(nanoseconds: UInt64(0.1 * 1_000_000_000))
       await scheduleRemainingSteps(steps: Array(steps.dropFirst()), keyPath: keyPath)
     } catch {}
   }
